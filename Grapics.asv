@@ -1,0 +1,28 @@
+% Дані
+theoretical = [5, 15, 30, 45, 60];
+measured = [7.31,18.32
+32,28
+45,44
+60,63
+];
+error_abs = abs(measured - theoretical);
+
+% Графік 1: Теоретичні та виміряні значення
+figure;
+plot(theoretical, theoretical, '-o', 'LineWidth', 2, 'DisplayName', 'Теоретичні значення');
+hold on;
+plot(theoretical, measured, '-s', 'LineWidth', 2, 'DisplayName', 'Виміряні значення');
+xlabel('Теоретичний тангаж (°)');
+ylabel('Значення тангажу (°)');
+title('Порівняння теоретичних і виміряних значень');
+legend('Location','northwest');
+grid on;
+
+% Графік 2: Абсолютна похибка
+figure;
+plot(theoretical, error_abs, '-d', 'Color', 'r', 'LineWidth', 2, 'DisplayName', 'Абсолютна похибка');
+xlabel('Теоретичний тангаж (°)');
+ylabel('Абсолютна похибка (°)');
+title('Графік абсолютної похибки');
+legend('Location','northeast');
+grid on;
